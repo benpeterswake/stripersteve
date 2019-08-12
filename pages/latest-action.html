@@ -16,8 +16,8 @@
     <!-- Custom fonts for this template -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
-        rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css">
 
     <!-- Custom styles for this template -->
     <link href="../css/landing-page.min.css" rel="stylesheet">
@@ -55,9 +55,10 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Latest Action</a>
-                        
+
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://www.facebook.com/Lake.Lanier.Fishing.Charter/" target="_blank">Facebook</a>
+                            <a class="dropdown-item" href="https://www.facebook.com/Lake.Lanier.Fishing.Charter/"
+                                target="_blank">Facebook</a>
                         </div>
                     </li>
 
@@ -83,11 +84,12 @@
     <section style="padding-top:30px; padding-bottom:30px;">
         <div class="container">
             <div class="row">
-                    <div class='embedsocial-album' data-ref="10d564166070780b30ef2576af36aed9c3a6d6d6"></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/ei.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialScript"));</script>
+                <div class='embedsocial-album' data-ref="10d564166070780b30ef2576af36aed9c3a6d6d6"></div>
+                <script>(function (d, s, id) { var js; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/ei.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialScript"));</script>
             </div>
         </div>
     </section>
- 
+
 
     <!-- Call to Action -->
     <section class="call-to-action text-white text-center">
@@ -162,26 +164,25 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
     <script>
-        $(document).on('click', 'a[href^="#"]', function (event) {
-            event.preventDefault();
-
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top
-            }, 700);
-        });
         $(document).ready(function () {
-            $.ajaxSetup({ cache: true });
-            $.getScript('https://connect.facebook.net/en_US/sdk.js', function () {
+            window.fbAsyncInit = function () {
                 FB.init({
-                    appId: '423491668471009',
-                    version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+                    appId: 'your-app-id',
+                    autoLogAppEvents: true,
+                    xfbml: true,
+                    version: 'v4.0'
                 });
-                ('/828085116/photos', function (response) {
-                    if (response) console.log(response);
-                });
+            };
+            $(document).on('click', 'a[href^="#"]', function (event) {
+                event.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 700);
             });
         });
     </script>
@@ -191,6 +192,6 @@
 
 
 https://graph.facebook.com/oauth/access_token
-  ?client_id=423491668471009
-  &client_secret=5fb05fba51518382425b7470df592d84
-  &grant_type=client_credentials
+?client_id=423491668471009
+&client_secret=5fb05fba51518382425b7470df592d84
+&grant_type=client_credentials
