@@ -13,7 +13,7 @@ exports.handler = (event, context, callback) => {
     sendEmail(event, function (err, data) {
         var response = {
             "isBase64Encoded": false,
-            "headers": { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'https://d3kbsxvq7os3rv.cloudfront.net' },
+            "headers": { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'http://www.stripersteve.com' },
             "statusCode": 200,
             "body": "{\"result\": \"Success.\"}"
         };
